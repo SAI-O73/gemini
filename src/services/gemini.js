@@ -25,7 +25,7 @@ export async function sendMessage(message) {
       contents: message,
     });
 
-    // Extract text from response
+    // Extract text from response - gemini-1.5-flash is fastest
     if (response?.candidates?.[0]?.content?.parts?.[0]?.text) {
       return response.candidates[0].content.parts[0].text;
     }
